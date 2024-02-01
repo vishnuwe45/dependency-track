@@ -12,7 +12,7 @@ jobs:
     - name : uploading the results
       run : |
         pip install cyclonedx-bom  
-        cyclonedx-py -r -i requirements.txt -o bom.xml
+        cyclonedx-py requirements -i requirements.txt -o bom.xml
         python3 upload.py
       env:
         URL: ${{ secrets.URL}}
